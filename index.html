@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Projets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestionnaire de Projets</h1>
+            <p>Organisez et suivez vos projets facilement</p>
+        </header>
+
+        <div class="project-controls">
+            <h2>Mes Projets</h2>
+            <button id="add-project-btn" class="btn btn-primary">Ajouter un projet</button>
+        </div>
+
+        <div id="project-form" class="project-form">
+            <h3 id="form-title">Ajouter un projet</h3>
+            <form id="project-form-element">
+                <input type="hidden" id="project-id">
+                <div class="form-group">
+                    <label for="project-name">Nom du projet</label>
+                    <input type="text" id="project-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-start-date">Date de début</label>
+                        <input type="date" id="project-start-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-end-date">Date de fin</label>
+                        <input type="date" id="project-end-date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="project-status">État</label>
+                    <select id="project-status" class="form-control">
+                        <option value="En attente">En attente</option>
+                        <option value="En cours">En cours</option>
+                        <option value="Terminé">Terminé</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-btn" class="btn btn-danger">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="projects-container" class="projects-container">
+            <!-- Projects will be dynamically added here -->
+        </div>
+
+        <div id="empty-state" class="empty-state">
+            <h2>Aucun projet pour le moment</h2>
+            <p>Commencez par ajouter votre premier projet en cliquant sur le bouton "Ajouter un projet"</p>
+            <button id="empty-add-btn" class="btn btn-primary">Ajouter un projet</button>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
